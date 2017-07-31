@@ -1,0 +1,48 @@
+{
+  "name": "nodejs-quickstart",
+  "version": "1.0.0",
+  "description": "My example of NodeJS",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "method-override": "^2.3.9",
+    "body-parser": "^1.17.2",
+    "consign": "^0.1.4",
+    "helmet": "^3.6.1",
+    "winston": "^2.3.1",
+    "moment": "^2.18.1",
+    "jsonwebtoken": "^7.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.11.0",
+    "chai": "^4.1.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "knex": "^0.13.0",
+    "mocha": "^3.4.2"
+  },
+  "scripts": {
+    "test": "echo 'None'",
+    "start": "yarn dev",
+    "dev": "export NODE_ENV=DEV; nodemon server.js --exec babel-node --presets es2017,stage-2",
+    "prod": "export NODE_ENV=PROD; babel-node server.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dougtq/nodejs-quickstart.git"
+  },
+  "keywords": ["jwt", "nodejs", "express", "consign"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dougtq/nodejs-quickstart/issues"
+  },
+  "homepage": "https://github.com/dougtq/nodejs-quickstart#readme"
+}
