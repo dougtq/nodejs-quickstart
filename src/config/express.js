@@ -39,10 +39,8 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 app.use(bodyParser.json({ limit: '5mb' }));
 
 // carregamento de rotas, controllers e models
-consign({ verbose: false }) /* setting the verbose property as false */
-  .include('src/routes')
-  .then('src/controllers')
-  .then('src/models')
+consign({ verbose: true }) /* setting the verbose property as false */
+  .include('src/**/**')
   .then('src/config/*.js')
   .into(app);
 
