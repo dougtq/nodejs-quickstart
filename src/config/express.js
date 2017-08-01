@@ -5,19 +5,11 @@ import winston from 'winston';
 import helmet from 'helmet';
 import method from 'method-override';
 
-global.winston = winston;
-
 const app = express();
 
-winston.level = 'debug';
-
-// Create log file with the NODE_ENV's value
-winston.add(winston.transports.File, {
-  filename: `./logs/API_${process.env.NODE_ENV}.log`,
-});
-
-// Remove winston logs from the console
-winston.remove(winston.transports.Console);
+global.winston = winston;
+global.winston.level = 'debug';
+/**/
 
 //  middleware
 app.set('port', 3000); // porta de acesso
@@ -34,13 +26,13 @@ app.use((req, res, next) => {
 
 app.use(method());
 app.use(express.static('./dist'));
-app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 app.use(bodyParser.json({ limit: '5mb' }));
+app.use(helmet());
 
 // carregamento de rotas, controllers e models
-consign({ verbose: true }) /* setting the verbose property as false */
-  .include('src/**/**')
+consign({ verbose: false }) /* setting the verbose property as false */
+  .include('src/example/example.route.js')
   .then('src/config/*.js')
   .into(app);
 
