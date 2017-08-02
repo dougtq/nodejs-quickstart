@@ -1,5 +1,11 @@
 {
-	"extends": ["airbnb-base"],
+    "extends": ["airbnb-base"],
+    "rules": {
+        "callback-return" :"off",
+        "dot-location" :"off",
+        "indent" :"error",
+        "no-console" :"off"
+    },
 	"env": {
     "es6": true,
     "jasmine": true,
