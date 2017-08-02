@@ -19,17 +19,10 @@ const prod = {
   },
 };
 
-module.exports = (function config() {
+(function config() {
   if (environment.toString().toUpperCase() === 'PROD') {
-    global.env = `mssql://${prod.dbConfig.user}:${prod.dbConfig.password}@${prod.dbConfig
-      .endpoint}:${prod.dbConfig.port}/${prod.dbConfig.database}`;
+    global.env = `mssql://${prod.dbConfig.user}:${prod.dbConfig.password}@${prod.dbConfig.endpoint}:${prod.dbConfig.port}/${prod.dbConfig.database}`;
     return;
   }
-  global.env = `mssql://${dev.dbConfig.user}:${dev.dbConfig.password}@${dev.dbConfig
-    .endpoint}:${dev.dbConfig.port}/${dev.dbConfig.database}`;
-}());
-
-
-(function getEnv() {
- // /
+  global.env = `mssql://${dev.dbConfig.user}:${dev.dbConfig.password}@${dev.dbConfig.endpoint}:${dev.dbConfig.port}/${dev.dbConfig.database}`;
 }());
