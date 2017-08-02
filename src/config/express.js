@@ -4,12 +4,13 @@ import consign from 'consign';
 import winston from 'winston';
 import helmet from 'helmet';
 import method from 'method-override';
+import status from 'http-status';
 
 const app = express();
-
+global.http = status;
 global.winston = winston;
 global.winston.level = 'debug';
-/**/
+global.winston.add(global.winston.transports.File, { filename: `../../logs/API_${process.env.NODE_ENV}.log` });
 
 //  middleware
 app.set('port', 3000); // porta de acesso
@@ -33,7 +34,10 @@ app.use(helmet());
 // carregamento de rotas, controllers e models
 consign({ verbose: false }) /* setting the verbose property as false */
   .include('src/example/example.route.js')
-  .then('src/config/*.js')
+  .then('src/example/example.controller.js')
+  .then('src/example/example.model.js')
+  .then('src/config/mssql.js')
+  .then('src/config/mongo.js')
   .into(app);
 
 module.exports = app;
