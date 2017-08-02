@@ -2,9 +2,9 @@ const sql = require('mssql');
 
 let query;
 
-const Executioner = function mssqlExec(conf, req, res) {
+const Executioner = function mssqlExec(req, res) {
   try {
-    const pool = new sql.ConnectionPool(conf, (err) => {
+    const pool = new sql.ConnectionPool(global.env, (err) => {
       pool.on('error', (poolErr) => {
         global.winston('debug', `At: ${new Date()} error:${poolErr}`);
         return res.status(500).json({ message: 'Erro com a conexão' });
@@ -25,7 +25,7 @@ const Executioner = function mssqlExec(conf, req, res) {
         pool.close();
         if (queryErr) {
           global.winston('debug', `At: ${new Date()} error:${queryErr}`);
-          return res.status(500).json({ message: 'Erro com a conexão' });
+          return res.status(404).json({ message: 'Erro com a execução' });
         }
         query = data;
       });
