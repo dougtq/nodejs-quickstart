@@ -1,9 +1,4 @@
 module.exports = function rotaExample(application) {
-  /* API DOC DA ROTA */
-  application.get('/api/examples', (req, res) => {
-    // application.src.example.controller.example(application, req, res);
-  });
-
   /**
    * @api {get} /api/examples/:id GetExample
    * @apiName GetExample
@@ -31,16 +26,20 @@ module.exports = function rotaExample(application) {
    *      "ativo" : "1"
    *      "tipo" : "2"
    *    }
-   * @apiError (404) {Error} SQLTIMEOUT Erro com SQL
+   * @apiError (404) {Error} APITIMEOUT API TIMEOUT
    *
    * @apiErrorExample Error-Response:
    *    HTTP/1.1 404 Not Found
    *    {
-   *      "error": "Falha na API"
+   *      "message": "Falha na API"
    *    }
    */
   application.get('/api/examples/:id', (req, res) => {
     res.status(200).json(`Seu Id de exemplo é: ${req.params.id}`);
+  });
+
+  application.get('/api/examples', (req, res) => {
+    application.src.example.controller.example(application, req, res);
   });
 
   application.post('/api/examples/', (req, res) => {
