@@ -15,7 +15,7 @@ global.winston.level = 'debug';
 app.set('port', 3000); // porta de acesso
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH');
   res.setHeader('Access-Control-Expose-Headers', 'Authorization');
   res.setHeader(
     'Access-Control-Allow-Headers',
