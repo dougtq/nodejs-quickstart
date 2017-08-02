@@ -90,6 +90,7 @@
   "globals": {  // additional predefined global variables
     "env" : true,
     "winston" : true,
-    "app": true
+    "app": true,
+    "http" : true
     }        
 }
