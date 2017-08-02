@@ -1,6 +1,6 @@
 module.exports = function rotaExample(application) {
   application.get('/api/example', (req, res) => {
-    application.src.example.model.example(application, req, res);
+    application.src.example.controller.example(application, req, res);
   });
 
   application.get('/api/example/:id', (req, res) => {
