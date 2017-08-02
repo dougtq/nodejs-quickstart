@@ -43,18 +43,18 @@ module.exports = function rotaExample(application) {
   });
 
   application.post('/api/examples/', (req, res) => {
-    res.status(200).json('Exemplo a ser criado ');
+    res.status(global.http.OK).json('Exemplo a ser criado ');
   });
 
   application.put('/api/examples/:id', (req, res) => {
-    res.status(200).json(`Seu Id de exemplo a ser alterado é: ${req.params.id}`);
+    res.status(global.http.OK).json(`Seu Id de exemplo a ser alterado é: ${req.params.id}`);
   });
 
   application.patch('/api/examples/:id', (req, res) => {
-    res.status(200).json(`Seu Id de exemplo a ser alterado parcialmente é: ${req.params.id}`);
+    res.status(global.http.OK).json(`Seu Id de exemplo a ser alterado parcialmente é: ${req.params.id}`);
   });
 
   application.delete('/api/examples/:id', (req, res) => {
-    res.status(200).json(`Seu Id de exemplo a ser deletado é: ${req.params.id}`);
+    res.status(global.http.OK).json(`Seu Id de exemplo a ser deletado é: ${req.params.id}`);
   });
 };
