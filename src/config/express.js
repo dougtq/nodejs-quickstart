@@ -32,12 +32,8 @@ app.use(bodyParser.json({ limit: '5mb' }));
 app.use(helmet());
 
 // carregamento de rotas, controllers e models
-consign({ verbose: false }) /* setting the verbose property as false */
-  .include('src/example/example.route.js')
-  .then('src/example/example.controller.js')
-  .then('src/example/example.model.js')
-  .then('src/config/mssql.js')
-  .then('src/config/mongo.js')
+consign({ verbose: true }) /* setting the verbose property as false */
+  .include('src/example/')
   .into(app);
 
 module.exports = app;
