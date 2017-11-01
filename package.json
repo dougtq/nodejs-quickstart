@@ -4,9 +4,10 @@
   "description": "My examples of packages usage with NodeJS",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.15.3",
     "body-parser": "^1.17.2",
     "consign": "^0.1.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
     "http-status": "^1.0.1",
     "jsonwebtoken": "^7.4.1",
     "method-override": "^2.3.9",
@@ -15,20 +16,34 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
-    "apidoc": "^0.17.6",
-    "nodemon": "^1.11.0"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.10.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.11.0",
+    "standard": "^10.0.3"
   },
   "scripts": {
-    "test": "echo 'None'",
-    "dev": "export NODE_ENV=DEV; yarn start",
-    "prod": "export NODE_ENV=PROD; yarn start ",
-    "start": "./node_modules/.bin/nodemon  index.js"
+    "build": "babel ./src -d app",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dougtq/nodejs-quickstart.git"
   },
-  "keywords": ["jwt", "nodejs", "express", "consign"],
+  "keywords": [
+    "jwt",
+    "nodejs",
+    "express",
+    "consign"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {

@@ -35,15 +35,11 @@ module.exports = function rotaExample(application) {
    *    }
    */
   application.get('/api/examples/:id', (req, res) => {
-    res.status(200).json(`Seu Id de exemplo é: ${req.params.id}`);
-  });
-
-  application.get('/api/examples', (req, res) => {
-    application.src.example.controller.example(application, req, res);
+    res.status(global.http.OK).json(`Seu Id de exemplo é: ${req.params.id}`);
   });
 
   application.post('/api/examples/', (req, res) => {
-    res.status(global.http.OK).json('Exemplo a ser criado ');
+    res.status(global.http.OK).json('Exemplo a ser criado');
   });
 
   application.put('/api/examples/:id', (req, res) => {
