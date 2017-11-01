@@ -1,4 +1,11 @@
 # nodejs-quickstart
 ### My example of a Node.js project
 
-**Quickstart with : Express, Babel, MongoDb, Mssql, Env's, Http-status, Eslint, Jshint,  Winston, BodyParser...**
+### Quickstart with : 
+  - Express 
+  - Babel 
+  - dotEnv 
+  - Http-status
+  - Winston
+
+![Node.js](https://nodeblog.files.wordpress.com/2011/07/nodejs.png "Node.js")
